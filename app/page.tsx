@@ -422,55 +422,69 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white py-6 px-4 font-sans text-[#862633]">
       <div className="max-w-md mx-auto bg-gray-50 p-4 rounded-3xl">
-        {/* Card 1: Header Only */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce] shadow-sm p-6 pt-3">
-          <div className="flex justify-center mb-1">
-            <Image
-              src="/images/bakers-delight-logo.png"
-              alt="Baker's Delight"
-              width={500}
-              height={175}
-              className="h-32 w-auto object-contain"
-              priority
-            />
-          </div>
-          <p className="text-center text-xs tracking-widest uppercase font-semibold mb-4 text-[#862633]">Premium Bakery Experience</p>
+       {/* Card 1: Header */}
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5] shadow-sm p-6 pt-4">
 
-          <div className="border-t border-[#e0d5ce] pt-4 space-y-1">
-            {/* space-y-1 reduces the vertical gap between the ID row and Staff row */}
+  {/* Logo */}
+  <div className="flex justify-center mb-2">
+    <Image
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Shoppers-Stop-Logo-Vector.svg--BKD2qiunWPNR8Wk8J3qrxaxAVW7MSw.png"
+      alt="Shoppers Stop"
+      width={420}
+      height={140}
+      className="h-24 w-auto object-contain"
+      priority
+    />
+  </div>
 
-            {/* Top Row: Receipt ID and Date & Time */}
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-xs text-gray-700 font-sans mb-0.5 font-bold">Receipt ID</p>
-                <p className="font-serif font-bold text-sm text-[#862633]">{currentReceipt.id}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-gray-700 font-sans mb-0.5 font-bold">Date & Time</p>
-                <p className="font-serif font-bold text-sm text-[#862633]">
-                  {currentReceipt.date} {currentReceipt.time}
-                </p>
-              </div>
-            </div>
+  {/* Tagline */}
+  <p className="text-center text-[11px] tracking-[0.25em] uppercase font-medium mb-5 text-black">
+    Fashion • Beauty • Home
+  </p>
 
-            {/* Bottom Row: Staff and QR Code */}
-            <div className="grid grid-cols-2 gap-4 items-end">
-              <div>
-                <p className="text-xs text-gray-700 font-sans mb-0.5 font-bold">Staff</p>
-                <p className="font-serif font-bold text-sm text-[#862633]">{currentReceipt.cashier}</p>
-              </div>
-              <div className="flex justify-end">
-                <Image
-                  src="/images/qr-code.png"
-                  alt="QR Code"
-                  width={80}
-                  height={80}
-                  className="h-16 w-16 bg-white p-1 rounded border border-[#e0d5ce]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  {/* Divider */}
+  <div className="border-t border-[#e5e5e5] pt-4 space-y-2">
+
+    {/* Top Row */}
+    <div className="grid grid-cols-2 gap-4">
+
+      <div>
+        <p className="text-[11px] text-gray-600 font-medium mb-0.5">Receipt ID</p>
+        <p className="font-semibold text-sm text-black">{currentReceipt.id}</p>
+      </div>
+
+      <div className="text-right">
+        <p className="text-[11px] text-gray-600 font-medium mb-0.5">Date & Time</p>
+        <p className="font-semibold text-sm text-black">
+          {currentReceipt.date} {currentReceipt.time}
+        </p>
+      </div>
+
+    </div>
+
+    {/* Bottom Row */}
+    <div className="grid grid-cols-2 gap-4 items-end">
+
+      <div>
+        <p className="text-[11px] text-gray-600 font-medium mb-0.5">Associate</p>
+        <p className="font-semibold text-sm text-black">{currentReceipt.cashier}</p>
+      </div>
+
+      <div className="flex justify-end">
+        <Image
+          src="/images/qr-code.png"
+          alt="QR Code"
+          width={80}
+          height={80}
+          className="h-16 w-16 bg-white p-1 rounded border border-[#e5e5e5]"
+        />
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
         {/* Card 2: Items, Totals, Payment, and Actions */}
         <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce] shadow-xl">
