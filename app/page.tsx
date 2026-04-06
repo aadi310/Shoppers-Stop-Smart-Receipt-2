@@ -160,6 +160,8 @@ export default function Home() {
 
   const currentReceipt = receipts[currentReceiptId as keyof typeof receipts]
 
+  const customerName = "Aaditya";
+
   const transactionHistory = [
     {
       id: "current",
@@ -438,8 +440,13 @@ export default function Home() {
   </div>
 
   {/* Tagline */}
-  <p className="text-center text-[11px] tracking-[0.25em] uppercase font-medium mb-5 text-black">
+  <p className="text-center text-[11px] tracking-[0.25em] uppercase font-medium text-black">
     Fashion • Beauty • Home
+  </p>
+
+  {/* Customer Thank You */}
+  <p className="text-center text-xs text-gray-600 mt-2 mb-5">
+    Thank you for shopping with us, <span className="font-semibold text-black">{customerName}</span>
   </p>
 
   {/* Divider */}
@@ -481,145 +488,208 @@ export default function Home() {
       </div>
 
     </div>
+  </div>
+</div>
+        
+        {/* Card 2: Items, Totals, Payment, and Actions */}
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5] shadow-sm">
+
+  {/* Items Section */}
+  <div className="p-6 border-b border-[#e5e5e5]">
+
+    <div className="flex items-center justify-between mb-5">
+
+      <div className="flex items-center gap-3">
+        <ShoppingBag size={20} className="text-black" />
+        <h3 className="text-lg font-semibold text-black">Purchased Items</h3>
+      </div>
+
+      <span className="bg-black text-white text-[11px] font-semibold px-3 py-1 rounded-full">
+        {currentReceipt.items.length} Items
+      </span>
+
+    </div>
+
+    <div className="space-y-2">
+
+      {currentReceipt.items.map((item) => {
+
+        const isExpanded = expandedItems.includes(item.id);
+
+        return (
+
+          <div key={item.id}>
+
+            <button
+              onClick={() => toggleItemExpanded(item.id)}
+              className="w-full bg-[#fafafa] rounded-xl p-4 border border-[#e5e5e5] text-left transition"
+            >
+
+              <div className="flex justify-between items-start">
+
+                <div className="flex-1">
+
+                  <p className="font-semibold text-sm text-black">
+                    {item.name}
+                  </p>
+
+                  <div className="mt-1">
+                    <ChevronDown
+                      size={16}
+                      className={`text-gray-500 transition-transform duration-300 ${
+                        isExpanded ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+
+                </div>
+
+                <div className="text-right ml-4">
+
+                  <p className="font-semibold text-sm text-black">
+                    ₹{(item.price * item.quantity).toFixed(2)}
+                  </p>
+
+                  <p className="text-xs text-gray-500">
+                    Qty {item.quantity}
+                  </p>
+
+                </div>
+
+              </div>
+
+              {isExpanded && (
+
+                <div className="mt-3 pt-3 border-t border-[#e5e5e5] space-y-2">
+
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <div className="flex justify-between items-center">
+
+                    <span className="text-[10px] uppercase tracking-wide text-gray-500 font-medium">
+                      {item.taxApplicable ? "GST Included" : "GST-Free"}
+                    </span>
+
+                    <span className="text-xs font-medium text-gray-600">
+                      {item.tax ? `₹${item.tax.toFixed(2)} tax` : ""}
+                    </span>
+
+                  </div>
+
+                </div>
+
+              )}
+
+            </button>
+
+          </div>
+
+        );
+
+      })}
+
+    </div>
 
   </div>
 
-</div>
 
-        {/* Card 2: Items, Totals, Payment, and Actions */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce] shadow-xl">
-          {/* Items Section */}
-          {/* Items Section */}
-          <div className="p-6 border-b border-[#e0d5ce]">
-            <div className="flex items-center justify-between gap-3 mb-4">
-              <div className="flex items-center gap-3">
-                <ShoppingBag size={20} className="text-[#862633]" />
-                <h3 className="text-lg font-serif font-bold text-[#862633]">Your Items</h3>
-              </div>
-              <span className="bg-[#862633] text-white text-xs font-bold px-3 py-1 rounded-full">
-                {currentReceipt.items.length} Items
-              </span>
-            </div>
+  {/* Totals Section */}
 
-            <div className="space-y-2">
-              {currentReceipt.items.map((item) => {
-                const isExpanded = expandedItems.includes(item.id);
-                return (
-                  <div key={item.id}>
-                    <button
-                      onClick={() => toggleItemExpanded(item.id)}
-                      className="w-full bg-[#fdfaf7] rounded-xl p-4 transition-all border-2 border-[#e0d5ce] text-left group"
-                    >
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          {/* Product Name */}
-                          <p className="font-serif font-bold text-[#862633] text-sm">
-                            {item.name}
-                          </p>
-                          {/* Expand/Collapse Icon positioned in the space below the name */}
-                          <div className="mt-1">
-                            <ChevronDown
-                              size={16}
-                              className={`text-[#862633] transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-                            />
-                          </div>
-                        </div>
+  <div className="px-6 py-5 space-y-3 bg-white">
 
-                        <div className="text-right ml-4">
-                          <p className="font-serif font-bold text-[#862633] text-sm">
-                            ${(item.price * item.quantity).toFixed(2)}
-                          </p>
-                          {/* Qty aligned horizontally with the Chevron */}
-                          <p className="text-xs text-gray-500 font-medium">Qty: {item.quantity}</p>
-                        </div>
-                      </div>
+    <div className="flex justify-between items-center">
+      <span className="text-gray-600 text-sm font-medium">Subtotal</span>
+      <span className="font-semibold text-sm text-black">
+        ₹{currentReceipt.subtotal.toFixed(2)}
+      </span>
+    </div>
 
-                      {isExpanded && (
-                        <div className="mt-3 pt-3 border-t border-[#e0d5ce] space-y-2">
-                          <p className="text-xs text-gray-700 font-sans leading-relaxed">
-                            {item.description}
-                          </p>
-                          <div className="flex justify-between items-center">
-                            <span className="text-[10px] font-bold text-gray-600 font-sans uppercase">
-                              {item.taxApplicable ? "10% GST Applied" : "GST-Free"}
-                            </span>
-                            <span className={`text-xs font-bold font-sans ${item.taxApplicable ? 'text-orange-600' : 'text-green-700'}`}>
-                              {item.tax ? `+$${item.tax.toFixed(2)}` : "No tax"}
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          {/* Totals Section */}
-          <div className="px-6 py-5 space-y-3 bg-white">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-700 font-sans text-sm font-semibold">Subtotal</span>
-              <span className="font-serif font-bold text-sm">${currentReceipt.subtotal.toFixed(2)}</span>
-            </div>
+    <div className="flex justify-between items-center border-t border-[#e5e5e5] pt-3">
+      <span className="text-gray-600 text-sm font-medium">GST</span>
+      <span className="font-semibold text-sm text-black">
+        ₹{currentReceipt.tax.toFixed(2)}
+      </span>
+    </div>
 
-            <div className="border-t-2 border-[#e0d5ce] pt-3">
-              <div className="flex justify-between items-center">
-                <span className="text-gray-700 font-sans text-sm font-semibold">GST (10%)</span>
-                <span className="font-serif font-bold text-sm text-orange-600">${currentReceipt.tax.toFixed(2)}</span>
-              </div>
-            </div>
+    <div className="flex justify-between items-center pt-3 border-t-2 border-black">
 
-            <div className="bg-gradient-to-r from-[#862633] to-[#a8334a] rounded-xl p-4 text-white mt-3">
-              <div className="flex justify-between items-center">
-                <span className="font-serif font-bold text-sm">Total</span>
-                <span className="font-serif font-bold text-xl">${currentReceipt.total.toFixed(2)}</span>
-              </div>
-            </div>
-          </div>
+      <span className="font-semibold text-base text-black">
+        Total Paid
+      </span>
 
-          {/* Payment Method */}
-          <div className="border-t-2 border-[#e0d5ce] px-6 py-4 bg-[#fdf4f4]">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <CreditCard size={20} className="text-gray-600" />
-                <div>
-                  <p className="text-xs font-semibold text-gray-600 font-sans">Card Payment</p>
-                  <p className="text-xs text-gray-600 font-sans">•••• •••• •••• {currentReceipt.cardLast4}</p>
-                </div>
-              </div>
-              <p className="font-serif font-bold text-[#862633]">${currentReceipt.total.toFixed(2)}</p>
-            </div>
-          </div>
+      <span className="font-semibold text-lg text-black">
+        ₹{currentReceipt.total.toFixed(2)}
+      </span>
 
-          {/* Action Buttons (Now inside the same card) */}
-          <div className="border-t border-[#e0d5ce] px-3 md:px-6 py-4 md:py-6 flex gap-2 md:gap-3 bg-[#fdfaf7]">
-            <button
-              onClick={downloadReceipt}
-              className="flex-1 bg-[#862633] text-white py-2 px-2 md:px-3 rounded-lg font-semibold text-xs md:text-sm hover:bg-[#6b1f29] transition-all duration-200 flex items-center justify-center gap-1 md:gap-2 shadow-sm"
-            >
-              <Download size={14} className="md:block" />
-              <span className="hidden sm:inline">Download</span>
-              <span className="sm:hidden">Download</span>
-            </button>
-            <button
-              onClick={() => setShowTransactionHistory(true)}
-              className="flex-1 border-2 border-[#862633] text-[#862633] py-2 px-2 md:px-3 rounded-lg font-semibold text-xs md:text-sm hover:bg-white transition-all duration-200 flex items-center justify-center gap-1 md:gap-2"
-            >
-              <History size={14} className="md:block" />
-              <span className="hidden sm:inline">History</span>
-              <span className="sm:hidden">History</span>
-            </button>
-            <button
-              onClick={handleEmailClick}
-              className="flex-1 bg-[#862633] text-white py-2 px-2 md:px-3 rounded-lg font-semibold text-xs md:text-sm hover:bg-[#6b1f29] transition-all duration-200 flex items-center justify-center gap-1 md:gap-2 shadow-sm"
-            >
-              <Mail size={14} className="md:block" />
-              <span className="hidden sm:inline">Email</span>
-              <span className="sm:hidden">Email</span>
-            </button>
-          </div>
+    </div>
+
+  </div>
+
+
+  {/* Payment Method */}
+
+  <div className="border-t border-[#e5e5e5] px-6 py-4 bg-[#fafafa]">
+
+    <div className="flex justify-between items-center">
+
+      <div className="flex items-center gap-2">
+
+        <CreditCard size={18} className="text-gray-600" />
+
+        <div>
+
+          <p className="text-xs font-medium text-gray-600">
+            Card Payment
+          </p>
+
+          <p className="text-xs text-gray-500">
+            •••• •••• •••• {currentReceipt.cardLast4}
+          </p>
+
         </div>
 
+      </div>
+
+      <p className="font-semibold text-black">
+        ₹{currentReceipt.total.toFixed(2)}
+      </p>
+
+    </div>
+
+  </div>
+
+
+  {/* Action Buttons */}
+
+  <div className="border-t border-[#e5e5e5] px-3 md:px-6 py-4 md:py-6 flex gap-2 md:gap-3 bg-white">
+
+    <button
+      onClick={downloadReceipt}
+      className="flex-1 bg-black text-white py-2 px-3 rounded-lg font-semibold text-xs md:text-sm flex items-center justify-center gap-2"
+    >
+      <Download size={14} />
+      Download
+    </button>
+
+    <button
+      onClick={() => setShowTransactionHistory(true)}
+      className="flex-1 border border-black text-black py-2 px-3 rounded-lg font-semibold text-xs md:text-sm flex items-center justify-center gap-2"
+    >
+      <History size={14} />
+      History
+    </button>
+
+    <button
+      onClick={handleEmailClick}
+      className="flex-1 bg-black text-white py-2 px-3 rounded-lg font-semibold text-xs md:text-sm flex items-center justify-center gap-2"
+    >
+      <Mail size={14} />
+      Email
+    </button>
+  </div>
+</div>
         {/* Carousel Banners */}
         <div className="bg-white rounded-2xl overflow-hidden mb-6 relative border border-[#e0d5ce]">
           <div className="relative h-64 bg-gray-200" style={{ aspectRatio: "1200/600" }}>
