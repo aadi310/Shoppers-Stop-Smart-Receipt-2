@@ -403,23 +403,19 @@ export default function Home() {
   }
 
   const slides = [
-    {
-      image: "/images/banner-mocha.png",
-      title: "Meet the Mocha Hot Cross Bun",
-      subtitle: "A decadent twist on a traditional classic, combining choc chips with rich coffee flavour",
-      buttonText: "Discover the flavour",
-      buttonColor: "bg-[#862633] hover:bg-[#6b1f29]",
-      link: "https://www.bakersdelight.com.au/pages/easter",
-    },
-    {
-      image: "/images/banner-rewards.png",
-      title: "Want Rewards? Sign Up",
-      subtitle: "Are you a bun head? Join our loyalty program for exclusive rewards",
-      buttonText: "Find out more",
-      buttonColor: "bg-[#862633] hover:bg-[#6b1f29]",
-      link: "https://www.bakersdelight.com.au/pages/dough-getters",
-    },
-  ]
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Banner%202-qah7Dw6Us0zbGj8Yttict3DShTIbb9.png",
+    title: "Beauty Essentials",
+    buttonText: "Explore Now",
+    link: "https://www.shoppersstop.com/search/result?q=Beauty+Essentials&page=1",
+  },
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Banner%203-SzLwrK1uS5rdL5ShEFUWk7yyRICZXC.png",
+    title: "Top Western Women Brands",
+    buttonText: "Shop Collection",
+    link: "https://www.shoppersstop.com/search/result?q=Top-Western-Women-Brands&page=1",
+  },
+];
 
   return (
     <div className="min-h-screen bg-white py-6 px-4 font-sans text-[#862633]">
@@ -691,128 +687,194 @@ export default function Home() {
   </div>
 </div>
         {/* Carousel Banners */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 relative border border-[#e0d5ce]">
-          <div className="relative h-64 bg-gray-200" style={{ aspectRatio: "1200/600" }}>
-            <Image
-              src={slides[currentSlideIndex].image || "/placeholder.svg"}
-              alt={slides[currentSlideIndex].title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-4">
-              <h3 className="text-white font-serif font-bold text-lg">{slides[currentSlideIndex].title}</h3>
-              <a
-                href={slides[currentSlideIndex].link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-3 px-6 py-2 rounded-lg font-semibold text-xs transition-all bg-white text-[#862633] hover:bg-gray-100 w-fit"
-              >
-                {slides[currentSlideIndex].buttonText}
-              </a>
-            </div>
-          </div>
-          <div className="flex justify-between items-center p-4">
-            <button
-              onClick={() => setCurrentSlideIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1))}
-              className="text-[#862633] hover:opacity-70"
-            >
-              ←
-            </button>
-            <div className="flex gap-2">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlideIndex(index)}
-                  className={`h-2 rounded-full transition-all ${index === currentSlideIndex ? 'bg-[#862633] w-6' : 'bg-gray-300 w-2'}`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={() => setCurrentSlideIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1))}
-              className="text-[#862633] hover:opacity-70"
-            >
-              →
-            </button>
-          </div>
-        </div>
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
 
+  {/* Image Container */}
+  <div className="relative">
+
+    <a
+      href={slides[currentSlideIndex].link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image
+        src={slides[currentSlideIndex].image}
+        alt={slides[currentSlideIndex].title}
+        width={1600}
+        height={800}
+        className="w-full h-auto object-contain"
+        priority
+      />
+    </a>
+
+    {/* Overlay Content */}
+    <div className="absolute bottom-4 left-4">
+
+      <h3 className="text-white font-semibold text-lg drop-shadow">
+        {slides[currentSlideIndex].title}
+      </h3>
+
+      <a
+        href={slides[currentSlideIndex].link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-2 px-5 py-2 rounded-md font-medium text-xs transition-all bg-white text-black hover:bg-gray-100"
+      >
+        {slides[currentSlideIndex].buttonText}
+      </a>
+
+    </div>
+
+  </div>
+
+
+  {/* Navigation */}
+  <div className="flex justify-between items-center p-4">
+
+    <button
+      onClick={() =>
+        setCurrentSlideIndex((prev) =>
+          prev === 0 ? slides.length - 1 : prev - 1
+        )
+      }
+      className="text-black hover:opacity-60"
+    >
+      ←
+    </button>
+
+    <div className="flex gap-2">
+
+      {slides.map((_, index) => (
+
+        <button
+          key={index}
+          onClick={() => setCurrentSlideIndex(index)}
+          className={`h-2 rounded-full transition-all ${
+            index === currentSlideIndex
+              ? "bg-black w-6"
+              : "bg-gray-300 w-2"
+          }`}
+        />
+
+      ))}
+
+    </div>
+
+    <button
+      onClick={() =>
+        setCurrentSlideIndex((prev) =>
+          prev === slides.length - 1 ? 0 : prev + 1
+        )
+      }
+      className="text-black hover:opacity-60"
+    >
+      →
+    </button>
+
+  </div>
+
+</div>
+        
         {/* Loyalty Section */}
-<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-  <div className="bg-gradient-to-r from-[#862633] to-[#a8334a] text-white p-6">
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
+
+  {/* Header */}
+  <div className="bg-black text-white p-6">
     <div className="flex items-center gap-3">
       <Gift size={20} />
-      <h3 className="text-lg font-serif font-bold">Join Dough Getters</h3>
+      <h3 className="text-lg font-semibold">Join First Citizen Club</h3>
     </div>
-    <p className="text-xs opacity-90 font-sans mt-1">
-      Start earning rewards today
+    <p className="text-xs opacity-80 mt-1">
+      Unlock exclusive rewards and member benefits
     </p>
   </div>
 
   <div className="p-6 space-y-4">
+
     {joinedDoughGetters ? (
+
       <div className="text-center py-8">
-        <div className="text-5xl mb-4">🎉</div>
-        <h4 className="text-xl font-serif font-bold text-[#862633] mb-2">
-          Thank You!
+
+        <div className="text-4xl mb-3">✨</div>
+
+        <h4 className="text-lg font-semibold text-black mb-2">
+          Welcome to First Citizen Club
         </h4>
-        <p className="text-sm text-gray-700 font-sans">
-          You've successfully joined Dough Getters. Start earning rewards on your next purchase!
+
+        <p className="text-sm text-gray-600">
+          Your membership is now active. Enjoy exclusive rewards and early access to special collections.
         </p>
+
       </div>
+
     ) : (
+
       <>
+
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2 font-sans">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
             Full Name
           </label>
+
           <input
             type="text"
             value={profile.name}
             onChange={(e) =>
               setProfile({ ...profile, name: e.target.value })
             }
-            className="w-full px-4 py-2 border-2 border-[#e0d5ce] rounded-lg focus:outline-none focus:border-[#862633] font-sans transition-all text-sm"
+            placeholder="Your Name"
+            className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:border-black transition-all text-sm"
           />
         </div>
 
+
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2 font-sans">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
             Mobile Number
           </label>
+
           <input
             type="text"
             value={profile.mobile}
             onChange={(e) =>
               setProfile({ ...profile, mobile: e.target.value })
             }
-            placeholder="04XX XXX XXX"
-            className="w-full px-4 py-2 border-2 border-[#e0d5ce] rounded-lg focus:outline-none focus:border-[#862633] font-sans transition-all text-sm"
+            placeholder="+91 9XXXXXXXXX"
+            className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:border-black transition-all text-sm"
           />
         </div>
 
+
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2 font-sans">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
             Email Address
           </label>
+
           <input
             type="email"
             value={profile.email}
             onChange={(e) =>
               setProfile({ ...profile, email: e.target.value })
             }
-            className="w-full px-4 py-2 border-2 border-[#e0d5ce] rounded-lg focus:outline-none focus:border-[#862633] font-sans transition-all text-sm"
+            placeholder="name@email.com"
+            className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:border-black transition-all text-sm"
           />
         </div>
 
+
         <button
           onClick={handleJoinDoughGetters}
-          className="w-full bg-[#862633] text-white py-3 rounded-lg font-semibold hover:bg-[#6b1f29] transition-all duration-200 font-sans text-sm"
+          className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-900 transition-all text-sm"
         >
-          Join Dough Getters Now
+          Join First Citizen Club
         </button>
+
       </>
+
     )}
+
   </div>
+
 </div>
         
         {/* Dough Getters Loyalty Points Display */}
