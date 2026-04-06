@@ -30,134 +30,160 @@ export default function Home() {
   }, [])
 
   const receipts = {
-    current: {
-      id: "BD240211120545",
-      date: "11-02-2025",
-      time: "12:05:45",
-      cashier: "Sarah Chen",
-      storeLocation: "Bakers Delight - Sydney CBD",
-      paymentMethod: "Card",
-      cardLast4: "4532",
-      items: [
-        {
-          id: 0,
-          name: "Hi-Fibre Lo-GI White Block Loaf",
-          description: "Fresh artisan sourdough loaf",
-          price: 8.0,
-          quantity: 1,
-          category: "Bread",
-          taxApplicable: false,
-          baseAmount: 8.0,
-          tax: 0,
-          itemCode: "BREAD001",
-        },
-        {
-          id: 1,
-          name: "Cheesymite Scrolls",
-          description: "Savory cheese and mite spread pastry",
-          price: 6.0,
-          quantity: 2,
-          category: "Savory",
-          taxApplicable: true,
-          baseAmount: 12.0,
-          tax: 1.2,
-          itemCode: "SAV002",
-        },
-        {
-          id: 2,
-          name: "Traditional Hot Cross Buns",
-          description: "6-Pack of seasonal spiced buns",
-          price: 13.0,
-          quantity: 1,
-          category: "Sweet",
-          taxApplicable: true,
-          baseAmount: 13.0,
-          tax: 1.3,
-          itemCode: "SWEET001",
-        },
-      ],
-      subtotal: 33.0,
-      tax: 2.5,
-      total: 35.5,
-    },
-    hist1: {
-      id: "BD240208150320",
-      date: "08-02-2025",
-      time: "15:03:20",
-      cashier: "Michael Torres",
-      storeLocation: "Bakers Delight - Sydney CBD",
-      paymentMethod: "Card",
-      cardLast4: "4532",
-      items: [
-        {
-          id: 0,
-          name: "Sourdough Vienna",
-          description: "Authentic European-style sourdough",
-          price: 10.5,
-          quantity: 1,
-          category: "Bread",
-          taxApplicable: false,
-          baseAmount: 10.5,
-          tax: 0,
-          itemCode: "BREAD002",
-        },
-        {
-          id: 1,
-          name: "Scone 4-Pack",
-          description: "Freshly baked plain scones",
-          price: 13.0,
-          quantity: 1,
-          category: "Sweet",
-          taxApplicable: true,
-          baseAmount: 13.0,
-          tax: 1.3,
-          itemCode: "SWEET002",
-        },
-      ],
-      subtotal: 23.5,
-      tax: 1.3,
-      total: 24.8,
-    },
-    hist2: {
-      id: "BD240205103015",
-      date: "05-02-2025",
-      time: "10:30:15",
-      cashier: "Emma Williams",
-      storeLocation: "Bakers Delight - Sydney CBD",
-      paymentMethod: "Card",
-      cardLast4: "4532",
-      items: [
-        {
-          id: 0,
-          name: "Spinach & Feta Danishes",
-          description: "Savory pastry with fresh spinach and feta",
-          price: 6.0,
-          quantity: 2,
-          category: "Savory",
-          taxApplicable: true,
-          baseAmount: 12.0,
-          tax: 1.2,
-          itemCode: "SAV003",
-        },
-        {
-          id: 1,
-          name: "White Block Loaf",
-          description: "Classic fresh white bread",
-          price: 7.0,
-          quantity: 1,
-          category: "Bread",
-          taxApplicable: false,
-          baseAmount: 7.0,
-          tax: 0,
-          itemCode: "BREAD003",
-        },
-      ],
-      subtotal: 19.0,
-      tax: 1.2,
-      total: 20.2,
-    },
-  }
+  current: {
+    id: "SS-2026-04892",
+    date: "15-03-2026",
+    time: "14:32",
+    cashier: "Staff #247",
+    storeLocation: "Shoppers Stop - Bannerghatta Rd, Bengaluru",
+    paymentMethod: "Card",
+    cardLast4: "4532",
+    items: [
+      {
+        id: 0,
+        name: "Zink London Women Dress - L",
+        description: "Elegant casual dress for women",
+        price: 1499,
+        quantity: 1,
+        category: "Women's Fashion",
+        taxApplicable: true,
+        baseAmount: 1499,
+        tax: 269.82,
+        itemCode: "ZL-WD-001",
+      },
+      {
+        id: 1,
+        name: "Armani UV Master Primer - 30ml",
+        description: "Luxury skin prep primer",
+        price: 5000,
+        quantity: 1,
+        category: "Beauty",
+        taxApplicable: true,
+        baseAmount: 5000,
+        tax: 900,
+        itemCode: "ARM-UV-001",
+      },
+      {
+        id: 2,
+        name: "The Body Shop Cleanser - 150ml",
+        description: "Refreshing facial cleanser",
+        price: 1036,
+        quantity: 1,
+        category: "Beauty",
+        taxApplicable: true,
+        baseAmount: 1036,
+        tax: 186.48,
+        itemCode: "TBS-CL-001",
+      },
+    ],
+    subtotal: 7535,
+    tax: 1356.3,
+    total: 8891.3,
+  },
 
+  hist1: {
+    id: "SS-2026-12847",
+    date: "28-02-2026",
+    time: "11:15",
+    cashier: "Staff #189",
+    storeLocation: "Shoppers Stop - Bannerghatta Rd, Bengaluru",
+    paymentMethod: "Card",
+    cardLast4: "4532",
+    items: [
+      {
+        id: 0,
+        name: "Allen Solly Men's Casual Blazer - XL",
+        description: "Smart casual blazer for men",
+        price: 7373,
+        quantity: 1,
+        category: "Men's Fashion",
+        taxApplicable: true,
+        baseAmount: 7373,
+        tax: 1327.14,
+        itemCode: "AS-MC-001",
+      },
+      {
+        id: 1,
+        name: "PLUM Salicylic Acid Face Wash - 100ml",
+        description: "Acne care facial cleanser",
+        price: 290,
+        quantity: 1,
+        category: "Beauty",
+        taxApplicable: true,
+        baseAmount: 290,
+        tax: 52.2,
+        itemCode: "PLUM-SA-001",
+      },
+      {
+        id: 2,
+        name: "Timex FitGen Digital Watch - 36mm",
+        description: "Smart casual digital watch",
+        price: 6995,
+        quantity: 1,
+        category: "Accessories",
+        taxApplicable: true,
+        baseAmount: 6995,
+        tax: 1259.1,
+        itemCode: "TMX-FG-001",
+      },
+    ],
+    subtotal: 14658,
+    tax: 2638.44,
+    total: 17296.44,
+  },
+
+  hist2: {
+    id: "SS-2026-09234",
+    date: "15-02-2026",
+    time: "16:48",
+    cashier: "Staff #312",
+    storeLocation: "Shoppers Stop - Bannerghatta Rd, Bengaluru",
+    paymentMethod: "Card",
+    cardLast4: "4532",
+    items: [
+      {
+        id: 0,
+        name: "HomeStop Beige Sofa Cover",
+        description: "Premium home décor sofa cover",
+        price: 448,
+        quantity: 1,
+        category: "Home",
+        taxApplicable: true,
+        baseAmount: 448,
+        tax: 80.64,
+        itemCode: "HS-BS-001",
+      },
+      {
+        id: 1,
+        name: "Borosil Dinner Set Rosella",
+        description: "34-piece elegant dinner set",
+        price: 3100,
+        quantity: 1,
+        category: "Home",
+        taxApplicable: true,
+        baseAmount: 3100,
+        tax: 558,
+        itemCode: "BOR-DS-001",
+      },
+      {
+        id: 2,
+        name: "Rayban Men's Square Sunglasses",
+        description: "Classic square frame sunglasses",
+        price: 8290,
+        quantity: 1,
+        category: "Accessories",
+        taxApplicable: true,
+        baseAmount: 8290,
+        tax: 1492.2,
+        itemCode: "RB-MS-001",
+      },
+    ],
+    subtotal: 11838,
+    tax: 2130.84,
+    total: 13968.84,
+  },
+};
+  
   const currentReceipt = receipts[currentReceiptId as keyof typeof receipts]
 
   const customerName = "Aaditya";
@@ -166,11 +192,11 @@ export default function Home() {
     {
       id: "current",
       date: "11-02-2025",
-      branch: "Bakers Delight - Sydney CBD",
-      amount: currentReceiptId === "current" ? receipts.current.total : 35.5,
+      branch: "Shoppers Stop",
+      amount: currentReceiptId === "current" ? receipts.current.total : 8891.3,
     },
-    { id: "hist1", date: "08-02-2025", branch: "Bakers Delight - Sydney CBD", amount: 24.8 },
-    { id: "hist2", date: "05-02-2025", branch: "Bakers Delight - Sydney CBD", amount: 20.2 },
+    { id: "hist1", date: "08-02-2025", branch: "Shoppers Stop", amount: 17296.44 },
+    { id: "hist2", date: "05-02-2025", branch: "Shoppers Stop", amount: 13968.84 },
   ]
 
   const validateAUPhone = (phone: string) => {
@@ -186,189 +212,264 @@ export default function Home() {
     const receiptHTML = `<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Baker's Delight Receipt - ${currentReceipt.id}</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
-      padding: 40px;
-    }
-    .receipt-card {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      border: 1px solid #e0d5ce;
-    }
-    .header {
-      text-align: center;
-      border-bottom: 2px solid #862633;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
-    }
-    .brand-name {
-      color: #862633;
-      font-size: 28px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .info-grid {
-      margin-bottom: 30px;
-    }
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed #e0d5ce;
-    }
-    .info-block {
-      display: flex;
-      flex-direction: column;
-    }
-    .info-block.right {
-      text-align: right;
-    }
-    .info-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      color: #777;
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-    .info-value {
-      color: #862633;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-    }
-    th {
-      text-align: left;
-      border-bottom: 2px solid #e0d5ce;
-      padding: 10px;
-      color: #862633;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-    td {
-      padding: 12px 10px;
-      border-bottom: 1px solid #eee;
-    }
-    .item-name { font-weight: bold; color: #862633; }
-    .item-desc { font-size: 11px; color: #666; }
-    .totals {
-      margin-left: auto;
-      width: 250px;
-    }
-    .total-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-    }
-    .grand-total {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 2px solid #862633;
-      font-size: 18px;
-      font-weight: bold;
-      color: #862633;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 12px;
-      color: #888;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Shoppers Stop Receipt - ${currentReceipt.id}</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:14px;
+  line-height:1.6;
+  color:#333;
+  background:#f6f6f6;
+  padding:40px;
+}
+
+.receipt-card{
+  max-width:700px;
+  margin:0 auto;
+  background:#fff;
+  padding:30px;
+  border-radius:8px;
+  border:1px solid #e5e5e5;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* Header */
+
+.header{
+  text-align:center;
+  border-bottom:2px solid #000;
+  padding-bottom:20px;
+  margin-bottom:25px;
+}
+
+.brand-name{
+  color:#000;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.tagline{
+  font-size:12px;
+  color:#666;
+  margin-top:6px;
+}
+
+/* Info grid */
+
+.info-grid{
+  margin-bottom:30px;
+}
+
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:14px;
+  padding-bottom:8px;
+  border-bottom:1px dashed #e5e5e5;
+}
+
+.info-block{
+  display:flex;
+  flex-direction:column;
+}
+
+.info-block.right{
+  text-align:right;
+}
+
+.info-label{
+  font-size:11px;
+  text-transform:uppercase;
+  color:#777;
+  font-weight:600;
+  margin-bottom:2px;
+}
+
+.info-value{
+  color:#000;
+  font-weight:600;
+  font-size:14px;
+}
+
+/* Table */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-bottom:30px;
+}
+
+th{
+  text-align:left;
+  border-bottom:2px solid #000;
+  padding:10px;
+  color:#000;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+td{
+  padding:12px 10px;
+  border-bottom:1px solid #eee;
+}
+
+.item-name{
+  font-weight:600;
+  color:#000;
+}
+
+.item-desc{
+  font-size:11px;
+  color:#666;
+}
+
+/* Totals */
+
+.totals{
+  margin-left:auto;
+  width:250px;
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+}
+
+.grand-total{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:2px solid #000;
+  font-size:18px;
+  font-weight:700;
+  color:#000;
+}
+
+/* Footer */
+
+.footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:12px;
+  color:#777;
+  border-top:1px solid #eee;
+  padding-top:20px;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="receipt-card">
-    <div class="header">
-      <div class="brand-name">Baker's Delight</div>
-      <p style="font-size: 12px; color: #666; margin-top: 5px;">Premium Bakery Experience</p>
+
+<div class="receipt-card">
+
+<div class="header">
+  <div class="brand-name">Shoppers Stop</div>
+  <p class="tagline">Fashion • Beauty • Home</p>
+</div>
+
+
+<div class="info-grid">
+
+  <div class="info-row">
+
+    <div class="info-block">
+      <p class="info-label">Receipt ID</p>
+      <p class="info-value">${currentReceipt.id}</p>
     </div>
 
-    <div class="info-grid">
-      <div class="info-row">
-        <div class="info-block">
-          <p class="info-label">Receipt ID</p>
-          <p class="info-value">${currentReceipt.id}</p>
-        </div>
-        <div class="info-block right">
-          <p class="info-label">Date & Time</p>
-          <p class="info-value">${currentReceipt.date} ${currentReceipt.time}</p>
-        </div>
-      </div>
-
-      <div class="info-row" style="border-bottom: none; margin-bottom: 0;">
-        <div class="info-block">
-          <p class="info-label">Store</p>
-          <p class="info-value">${currentReceipt.storeLocation}</p>
-        </div>
-        <div class="info-block right">
-          <p class="info-label">Staff</p>
-          <p class="info-value">${currentReceipt.cashier}</p>
-        </div>
-      </div>
+    <div class="info-block right">
+      <p class="info-label">Date & Time</p>
+      <p class="info-value">${currentReceipt.date} ${currentReceipt.time}</p>
     </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 60%;">Item</th>
-          <th style="width: 15%; text-align: center;">Qty</th>
-          <th style="width: 25%; text-align: right;">Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${currentReceipt.items.map(item => `
-          <tr>
-            <td>
-              <div class="item-name">${item.name}</div>
-              <div class="item-desc">${item.description}</div>
-            </td>
-            <td style="text-align: center;">${item.quantity}</td>
-            <td style="text-align: right; font-weight: bold;">$${(item.price * item.quantity).toFixed(2)}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>
-
-    <div class="totals">
-      <div class="total-row">
-        <span>Subtotal</span>
-        <span>$${currentReceipt.subtotal.toFixed(2)}</span>
-      </div>
-      <div class="total-row">
-        <span>GST (10%)</span>
-        <span>$${currentReceipt.tax.toFixed(2)}</span>
-      </div>
-      <div class="total-row grand-total">
-        <span>Total</span>
-        <span>$${currentReceipt.total.toFixed(2)}</span>
-      </div>
-    </div>
-
-    <div class="footer">
-      <p>Thank you for shopping at Baker's Delight!</p>
-      <p>Visit us at www.bakersdelight.com.au</p>
-      <p style="margin-top: 10px; opacity: 0.6;">Powered by RDEP</p>
-    </div>
   </div>
+
+
+  <div class="info-row" style="border-bottom:none;margin-bottom:0;">
+
+    <div class="info-block">
+      <p class="info-label">Store</p>
+      <p class="info-value">${currentReceipt.storeLocation}</p>
+    </div>
+
+    <div class="info-block right">
+      <p class="info-label">Staff</p>
+      <p class="info-value">${currentReceipt.cashier}</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<table>
+
+<thead>
+<tr>
+<th style="width:60%">Item</th>
+<th style="width:15%; text-align:center;">Qty</th>
+<th style="width:25%; text-align:right;">Amount</th>
+</tr>
+</thead>
+
+<tbody>
+
+${currentReceipt.items.map(item => `
+<tr>
+<td>
+  <div class="item-name">${item.name}</div>
+  <div class="item-desc">${item.description}</div>
+</td>
+
+<td style="text-align:center;">
+${item.quantity}
+</td>
+
+<td style="text-align:right; font-weight:600;">
+₹${(item.price * item.quantity).toFixed(2)}
+</td>
+
+</tr>
+`).join('')}
+
+</tbody>
+
+</table>
+
+
+<div class="totals">
+
+<div class="total-row">
+<span>Subtotal</span>
+<span>₹${currentReceipt.subtotal.toFixed(2)}</span>
+</div>
+
+<div class="total-row">
+<span>GST (18%)</span>
+<span>₹${currentReceipt.tax.toFixed(2)}</span>
+</div>
+
+<div class="total-row grand-total">
+<span>Total</span>
+<span>₹${currentReceipt.total.toFixed(2)}</span>
+</div>
+
+</div>
+
+
+<div class="footer">
+<p>Thank you for shopping with Shoppers Stop!</p>
+<p>Visit us at www.shoppersstop.com</p>
+<p style="margin-top:10px; opacity:0.6;">Powered by RDEP</p>
+</div>
+</div>
 </body>
 </html>`;
 
@@ -1031,52 +1132,69 @@ export default function Home() {
   </div>
 </div>
         {/* Connect with Us Section */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-          <div className="bg-[#862633] text-white p-6">
-            <div className="flex items-center gap-3">
-              <Globe size={20} />
-              <h3 className="text-lg font-serif font-bold">Connect With Us</h3>
-            </div>
-          </div>
-          <div className="p-8 flex justify-center gap-10">
-            <a
-              href="https://www.instagram.com/bakersdelight/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 group"
-              title="Instagram"
-            >
-              <div className="w-12 h-12 rounded-full border-2 border-[#e0d5ce] flex items-center justify-center text-[#862633] group-hover:border-[#862633] group-hover:bg-[#862633] group-hover:text-white transition-all duration-300">
-                <Instagram size={22} />
-              </div>
-              <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-gray-500 group-hover:text-[#862633]">Instagram</span>
-            </a>
-            <a
-              href="https://www.facebook.com/bakersdelight/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 group"
-              title="Facebook"
-            >
-              <div className="w-12 h-12 rounded-full border-2 border-[#e0d5ce] flex items-center justify-center text-[#862633] group-hover:border-[#862633] group-hover:bg-[#862633] group-hover:text-white transition-all duration-300">
-                <Facebook size={22} />
-              </div>
-              <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-gray-500 group-hover:text-[#862633]">Facebook</span>
-            </a>
-            <a
-              href="https://www.bakersdelight.com.au/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 group"
-              title="Website"
-            >
-              <div className="w-12 h-12 rounded-full border-2 border-[#e0d5ce] flex items-center justify-center text-[#862633] group-hover:border-[#862633] group-hover:bg-[#862633] group-hover:text-white transition-all duration-300">
-                <Globe size={22} />
-              </div>
-              <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-gray-500 group-hover:text-[#862633]">Website</span>
-            </a>
-          </div>
-        </div>
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
+
+  <div className="bg-black text-white p-6">
+    <div className="flex items-center gap-3">
+      <Globe size={20} />
+      <h3 className="text-lg font-semibold">Connect With Us</h3>
+    </div>
+  </div>
+
+  <div className="p-8 flex justify-center gap-10">
+
+    {/* Instagram */}
+    <a
+      href="https://www.instagram.com/shoppers_stop/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center gap-2 group"
+      title="Instagram"
+    >
+      <div className="w-12 h-12 rounded-full border border-[#e5e5e5] flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all duration-300">
+        <Instagram size={22} />
+      </div>
+      <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500 group-hover:text-black">
+        Instagram
+      </span>
+    </a>
+
+    {/* Facebook */}
+    <a
+      href="https://www.facebook.com/shoppersstopindia/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center gap-2 group"
+      title="Facebook"
+    >
+      <div className="w-12 h-12 rounded-full border border-[#e5e5e5] flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all duration-300">
+        <Facebook size={22} />
+      </div>
+      <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500 group-hover:text-black">
+        Facebook
+      </span>
+    </a>
+
+    {/* Website */}
+    <a
+      href="https://www.shoppersstop.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center gap-2 group"
+      title="Website"
+    >
+      <div className="w-12 h-12 rounded-full border border-[#e5e5e5] flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all duration-300">
+        <Globe size={22} />
+      </div>
+      <span className="text-[10px] font-medium uppercase tracking-wider text-gray-500 group-hover:text-black">
+        Website
+      </span>
+    </a>
+
+  </div>
+
+</div>
+        
         {/* Store Details & Terms */}
 <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
   <button
