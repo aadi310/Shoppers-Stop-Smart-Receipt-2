@@ -710,10 +710,6 @@ export default function Home() {
     {/* Overlay Content */}
     <div className="absolute bottom-4 left-4">
 
-      <h3 className="text-white font-semibold text-lg drop-shadow">
-        {slides[currentSlideIndex].title}
-      </h3>
-
       <a
         href={slides[currentSlideIndex].link}
         target="_blank"
@@ -722,15 +718,11 @@ export default function Home() {
       >
         {slides[currentSlideIndex].buttonText}
       </a>
-
     </div>
-
   </div>
-
 
   {/* Navigation */}
   <div className="flex justify-between items-center p-4">
-
     <button
       onClick={() =>
         setCurrentSlideIndex((prev) =>
@@ -870,53 +862,70 @@ export default function Home() {
         </button>
 
       </>
-
     )}
-
   </div>
-
 </div>
         
-        {/* Dough Getters Loyalty Points Display */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-          <div className="bg-gradient-to-r from-[#862633] to-[#a8334a] text-white p-6">
-            <div className="flex items-center gap-3">
-              <Award size={20} />
-              <h3 className="text-lg font-serif font-bold">Dough Getters Rewards</h3>
-            </div>
-            <p className="text-xs opacity-90 font-sans mt-1">Your loyalty benefits</p>
-          </div>
-
-          <div className="p-6 space-y-5">
-            <div className="bg-gradient-to-br from-[#fdfaf7] to-[#f5ede5] rounded-lg p-5 border-2 border-[#e0d5ce]">
-              <div className="flex justify-between items-center mb-3">
-                <div>
-                  <p className="text-xs font-semibold text-gray-700 font-sans mb-1">Amount Spent</p>
-                  <p className="text-2xl font-serif font-bold text-[#862633]">$125.50</p>
-                </div>
-                <div className="text-3xl">🥖</div>
-              </div>
-              <div className="bg-white h-2 rounded-full overflow-hidden border border-[#e0d5ce]">
-                <div className="bg-gradient-to-r from-[#862633] to-[#a8334a] h-full" style={{ width: '48%' }}></div>
-              </div>
-              <p className="text-xs text-gray-600 mt-2 font-sans font-semibold">Earn $5 for every $55 spent - $29.50 towards next reward</p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-gradient-to-br from-yellow-100 to-yellow-50 rounded-lg p-4 border-2 border-yellow-300">
-                <p className="text-2xl mb-2">🎉</p>
-                <p className="text-xs font-semibold text-gray-800 font-sans">Birthday Surprise</p>
-                <p className="text-xs text-gray-600 mt-1 font-sans">Next month!</p>
-              </div>
-              <div className="bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg p-4 border-2 border-emerald-300">
-                <p className="text-2xl mb-2">🎁</p>
-                <p className="text-xs font-semibold text-gray-800 font-sans">Welcome Offer</p>
-                <p className="text-xs text-gray-600 mt-1 font-sans">Free Hot Cross Bun 6-pack</p>
-              </div>
-            </div>
-          </div>
+        {/* First Citizen Club Rewards Display */}
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
+  {/* Header */}
+  <div className="bg-black text-white p-6">
+    <div className="flex items-center gap-3">
+      <Award size={20} />
+      <h3 className="text-lg font-semibold">First Citizen Club</h3>
+    </div>
+    <p className="text-xs opacity-80 mt-1">
+      Your membership benefits
+    </p>
+  </div>
+  <div className="p-6 space-y-5">
+    {/* Spend Progress */}
+    <div className="bg-[#fafafa] rounded-xl p-5 border border-[#e5e5e5]">
+      <div className="flex justify-between items-center mb-3">
+        <div>
+          <p className="text-xs font-medium text-gray-600 mb-1">
+            Amount Spent This Year
+          </p>
+          <p className="text-2xl font-semibold text-black">
+            ₹12,550
+          </p>
         </div>
-
+        <div className="text-3xl">🏷️</div>
+      </div>
+      {/* Progress Bar */}
+      <div className="bg-gray-200 h-2 rounded-full overflow-hidden">
+        <div
+          className="bg-black h-full"
+          style={{ width: "62%" }}
+        />
+      </div>
+      <p className="text-xs text-gray-600 mt-2">
+        Spend ₹7,450 more to unlock the next tier of First Citizen benefits
+      </p>
+    </div>
+    {/* Member Benefits */}
+    <div className="grid grid-cols-2 gap-3">
+      <div className="bg-[#fafafa] rounded-xl p-4 border border-[#e5e5e5]">
+        <p className="text-2xl mb-2">🎉</p>
+        <p className="text-xs font-semibold text-gray-800">
+          Birthday Rewards
+        </p>
+        <p className="text-xs text-gray-500 mt-1">
+          Special offers during your birthday month
+        </p>
+      </div>
+      <div className="bg-[#fafafa] rounded-xl p-4 border border-[#e5e5e5]">
+        <p className="text-2xl mb-2">🛍️</p>
+        <p className="text-xs font-semibold text-gray-800">
+          Member-Only Sales
+        </p>
+        <p className="text-xs text-gray-500 mt-1">
+          Early access to exclusive discounts
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
         {/* Rate Your Experience Section */}
         <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
           <div className="bg-[#862633] text-white p-6">
