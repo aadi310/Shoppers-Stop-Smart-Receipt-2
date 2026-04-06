@@ -926,186 +926,110 @@ export default function Home() {
     </div>
   </div>
 </div>
+       
         {/* Rate Your Experience Section */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-          <div className="bg-[#862633] text-white p-6">
-            <div className="flex items-center gap-3">
-              <Sparkles size={18} />
-              <h3 className="text-lg font-serif font-bold">Rate Your Experience</h3>
-            </div>
-          </div>
-
-          <div className="p-6">
-            {showFeedbackSuccess ? (
-              <div className="text-center py-8">
-                <div className="text-4xl mb-3 animate-bounce">✅</div>
-                <p className="text-base font-serif font-bold text-[#862633] mb-1">Thanks for your feedback!</p>
-                <p className="text-xs text-gray-600 font-sans">We appreciate your support</p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div>
-                  <p className="text-xs font-semibold text-gray-700 font-sans mb-3 text-center">How was your experience?</p>
-                  <div className="flex justify-center gap-2">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <button
-                        key={star}
-                        onMouseEnter={() => setHoveredRating(star)}
-                        onMouseLeave={() => setHoveredRating(0)}
-                        onClick={() => setRating(star)}
-                        className="text-3xl transition-all duration-200 transform hover:scale-110 cursor-pointer"
-                      >
-                        {star <= (hoveredRating || rating) ? (
-                          <span className="text-[#862633]">🥖</span>
-                        ) : (
-                          <span className="opacity-20 grayscale">🥖</span>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-gray-700 font-sans mb-2">Additional Comments</label>
-                  <textarea
-                    value={feedbackText}
-                    onChange={(e) => setFeedbackText(e.target.value)}
-                    placeholder="Share your feedback..."
-                    className="w-full px-3 py-2 border-2 border-[#e0d5ce] rounded-lg focus:outline-none focus:border-[#862633] resize-none font-sans text-xs transition-all"
-                    rows={3}
-                  />
-                </div>
-
-                <button
-                  onClick={handleSubmitFeedback}
-                  className="w-full bg-[#862633] text-white py-2 rounded-lg font-semibold text-sm hover:bg-[#6b1f29] transition-all duration-200 font-sans"
-                >
-                  Submit Feedback
-                </button>
-              </div>
-            )}
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
+  {/* Header */}
+  <div className="bg-black text-white p-6">
+    <div className="flex items-center gap-3">
+      <Sparkles size={18} />
+      <h3 className="text-lg font-semibold">Rate Your Experience</h3>
+    </div>
+  </div>
+  <div className="p-6">
+    {showFeedbackSuccess ? (
+      <div className="text-center py-8">
+        <div className="text-4xl mb-3">✨</div>
+        <p className="text-base font-semibold text-black mb-1">
+          Thank you for your feedback
+        </p>
+        <p className="text-xs text-gray-600">
+          Your feedback helps us improve your shopping experience.
+        </p>
+      </div>
+    ) : (
+      <div className="space-y-5">
+        {/* Rating */}
+        <div>
+          <p className="text-xs font-medium text-gray-600 mb-3 text-center">
+            How was your shopping experience?
+          </p>
+          <div className="flex justify-center gap-3">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                onMouseEnter={() => setHoveredRating(star)}
+                onMouseLeave={() => setHoveredRating(0)}
+                onClick={() => setRating(star)}
+                className="transition-transform hover:scale-110 text-2xl"
+              >
+                {star <= (hoveredRating || rating) ? (
+                  <span className="text-yellow-500">★</span>
+                ) : (
+                  <span className="text-gray-300">★</span>
+                )}
+              </button>
+            ))}
           </div>
         </div>
+        {/* Comments */}
+        <div>
+          <label className="block text-xs font-medium text-gray-600 mb-2">
+            Additional Comments
+          </label>
 
-        {/* Shop Your Favorites Section */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-          <div className="bg-gradient-to-r from-[#862633] to-[#a8334a] text-white p-6">
-            <div className="flex items-center gap-3">
-              <ShoppingBag size={20} />
-              <h3 className="text-lg font-serif font-bold">Shop Your Favorites</h3>
-            </div>
-          </div>
-
-          <div className="p-6">
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <a
-                href="https://www.bakersdelight.com.au/products/sourdough-vienna"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/product-sourdough.png"
-                  alt="Sourdough Vienna"
-                  width={120}
-                  height={120}
-                  className="h-24 w-24 object-cover rounded-lg"
-                />
-                <p className="text-xs font-sans text-center text-gray-700">Sourdough Vienna</p>
-              </a>
-              <a
-                href="https://www.bakersdelight.com.au/products/choc-mud-scone"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/product-scone.png"
-                  alt="Choc Mud Scone"
-                  width={120}
-                  height={120}
-                  className="h-24 w-24 object-cover rounded-lg"
-                />
-                <p className="text-xs font-sans text-center text-gray-700">Choc Mud Scone</p>
-              </a>
-              <a
-                href="https://www.bakersdelight.com.au/products/apple-cinnamon-hot-cross-bun-6-pack"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/product-hcb.png"
-                  alt="Apple & Cinnamon Hot Cross Bun 6 Pack"
-                  width={120}
-                  height={120}
-                  className="h-24 w-24 object-cover rounded-lg"
-                />
-                <p className="text-xs font-sans text-center text-gray-700">Apple & Cinnamon Hot Cross Bun 6 Pack</p>
-              </a>
-              <a
-                href="https://www.bakersdelight.com.au/products/mediterranean-pizza"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/product-pizza.png"
-                  alt="Mediterranean Pizza"
-                  width={120}
-                  height={120}
-                  className="h-24 w-24 object-cover rounded-lg"
-                />
-                <p className="text-xs font-sans text-center text-gray-700">Mediterranean Pizza</p>
-              </a>
-            </div>
-            <div className="flex justify-center px-4">
-              <a
-                href="https://www.bakersdelight.com.au/collections/all-products"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#862633] text-white py-3 px-12 rounded-xl font-semibold text-sm hover:bg-[#6b1f29] transition-all duration-200 text-center"
-              >
-                Shop All
-              </a>
-            </div>
-          </div>
+          <textarea
+            value={feedbackText}
+            onChange={(e) => setFeedbackText(e.target.value)}
+            placeholder="Share your feedback about your shopping experience..."
+            className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:border-black resize-none text-xs transition-all"
+            rows={3}
+          />
         </div>
-
+        {/* Submit */}
+        <button
+          onClick={handleSubmitFeedback}
+          className="w-full bg-black text-white py-2 rounded-lg font-medium text-sm hover:bg-gray-900 transition-all"
+        >
+          Submit Feedback
+        </button>
+      </div>
+    )}
+  </div>
+</div>
+        
         {/* Need Help Section */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-          <div className="bg-[#862633] text-white p-6 flex items-center gap-3">
-            <HelpCircle size={18} />
-            <h3 className="text-lg font-serif font-bold">Need Help?</h3>
-          </div>
-
-          <div className="p-6 flex gap-3">
-            <a
-              href="https://wa.me/919620921294"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 border-2 border-[#e0d5ce] text-[#862633] py-3 px-3 rounded-xl font-semibold text-xs hover:border-[#862633] transition-all duration-200 flex flex-col items-center justify-center gap-2"
-            >
-              <MessageCircle size={20} />
-              Chat
-            </a>
-            <a
-              href="tel:+919620921294"
-              className="flex-1 border-2 border-[#e0d5ce] text-[#862633] py-3 px-3 rounded-xl font-semibold text-xs hover:border-[#862633] transition-all duration-200 flex flex-col items-center justify-center gap-2"
-            >
-              <Phone size={20} />
-              Call
-            </a>
-            <a
-              href="mailto:sagar.p@proenx.com"
-              className="flex-1 border-2 border-[#e0d5ce] text-[#862633] py-3 px-3 rounded-xl font-semibold text-xs hover:border-[#862633] transition-all duration-200 flex flex-col items-center justify-center gap-2"
-            >
-              <Mail size={20} />
-              Email
-            </a>
-          </div>
-        </div>
-
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
+  <div className="bg-black text-white p-6 flex items-center gap-3">
+    <HelpCircle size={18} />
+    <h3 className="text-lg font-semibold">Need Assistance?</h3>
+  </div>
+  <div className="p-6 flex gap-3">
+    <a
+      href="https://wa.me/919620921294"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-1 border border-[#e5e5e5] text-black py-3 px-3 rounded-xl font-medium text-xs hover:bg-black hover:text-white transition-all flex flex-col items-center justify-center gap-2"
+    >
+      <MessageCircle size={20} />
+      Chat
+    </a>
+    <a
+      href="tel:+919620921294"
+      className="flex-1 border border-[#e5e5e5] text-black py-3 px-3 rounded-xl font-medium text-xs hover:bg-black hover:text-white transition-all flex flex-col items-center justify-center gap-2"
+    >
+      <Phone size={20} />
+      Call
+    </a>
+    <a
+      href="mailto:sagar.p@proenx.com"
+      className="flex-1 border border-[#e5e5e5] text-black py-3 px-3 rounded-xl font-medium text-xs hover:bg-black hover:text-white transition-all flex flex-col items-center justify-center gap-2"
+    >
+      <Mail size={20} />
+      Email
+    </a>
+  </div>
+</div>
         {/* Connect with Us Section */}
         <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
           <div className="bg-[#862633] text-white p-6">
@@ -1114,7 +1038,6 @@ export default function Home() {
               <h3 className="text-lg font-serif font-bold">Connect With Us</h3>
             </div>
           </div>
-
           <div className="p-8 flex justify-center gap-10">
             <a
               href="https://www.instagram.com/bakersdelight/"
@@ -1154,91 +1077,130 @@ export default function Home() {
             </a>
           </div>
         </div>
-
         {/* Store Details & Terms */}
-        <div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e0d5ce]">
-          <button
-            onClick={() => setShowStoreDetails(!showStoreDetails)}
-            className="w-full bg-[#862633] text-white p-6 flex items-center justify-between hover:opacity-95 transition-opacity"
-          >
-            <div className="flex items-center gap-3">
-              <MapPin size={18} />
-              <h3 className="text-lg font-serif font-bold">Store Details & Terms</h3>
-            </div>
-            <ChevronDown size={20} className={`transition-transform duration-300 ${showStoreDetails ? 'rotate-180' : ''}`} />
-          </button>
-
-          {showStoreDetails && (
-            <div className="p-6 space-y-4 border-t border-[#e0d5ce]">
-              <div className="text-center space-y-3">
-                <div>
-                  <p className="font-semibold text-xs text-gray-800 font-sans mb-1">📍 Location</p>
-                  <p className="text-xs text-gray-600 font-sans">123 Martin Place, Sydney CBD NSW 2000</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-xs text-gray-800 font-sans mb-1">⏰ Trading Hours</p>
-                  <p className="text-xs text-gray-600 font-sans">Mon-Fri: 7:00 AM - 7:00 PM</p>
-                  <p className="text-xs text-gray-600 font-sans">Sat-Sun: 8:00 AM - 6:00 PM</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-xs text-gray-800 font-sans mb-1">📞 Contact</p>
-                  <p className="text-xs text-gray-600 font-sans">1300 273 273</p>
-                  <p className="text-xs text-gray-600 font-sans">info@bakerdelight.com.au</p>
-                </div>
-              </div>
-
-              <div className="border-t border-[#e0d5ce] pt-4 flex gap-2 justify-center">
-                <a href="https://www.bakersdelight.com.au/pages/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-[#862633] hover:underline text-xs font-sans font-semibold">Terms & Conditions</a>
-                <span className="text-gray-400">•</span>
-                <a href="https://www.bakersdelight.com.au/pages/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#862633] hover:underline text-xs font-sans font-semibold">Privacy Policy</a>
-              </div>
-            </div>
-          )}
+<div className="bg-white rounded-2xl overflow-hidden mb-6 border border-[#e5e5e5]">
+  <button
+    onClick={() => setShowStoreDetails(!showStoreDetails)}
+    className="w-full bg-black text-white p-6 flex items-center justify-between hover:opacity-95 transition-opacity"
+  >
+    <div className="flex items-center gap-3">
+      <MapPin size={18} />
+      <h3 className="text-lg font-semibold">Store Details & Policies</h3>
+    </div>
+    <ChevronDown
+      size={20}
+      className={`transition-transform duration-300 ${showStoreDetails ? "rotate-180" : ""}`}
+    />
+  </button>
+  {showStoreDetails && (
+    <div className="p-6 space-y-4 border-t border-[#e5e5e5]">
+      <div className="text-center space-y-3">
+        {/* Store Location */}
+        <div>
+          <p className="font-semibold text-xs text-gray-800 mb-1">📍 Store Location</p>
+          <p className="text-xs text-gray-600 leading-relaxed">
+            Shoppers Stop<br />
+            GROUND FLOOR, Commerce Mantri<br />
+            Bannerghatta Rd, NS Palya<br />
+            BTM Layout 2nd Stage<br />
+            Bengaluru, Karnataka 560076
+          </p>
         </div>
-
+        {/* Contact */}
+        <div>
+          <p className="font-semibold text-xs text-gray-800 mb-1">📞 Customer Support</p>
+          <p className="text-xs text-gray-600">
+            1800-419-6648
+          </p>
+          <p className="text-xs text-gray-600">
+            customercare@shoppersstop.com
+          </p>
+        </div>
+      </div>
+      {/* Terms & Privacy */}
+      <div className="border-t border-[#e5e5e5] pt-4 flex gap-2 justify-center">
+        <a
+          href="https://www.shoppersstop.com/miscs/Terms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-black hover:underline text-xs font-medium"
+        >
+          Terms & Conditions
+        </a>
+        <span className="text-gray-400">•</span>
+        <a
+          href="https://www.shoppersstop.com/miscs/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-black hover:underline text-xs font-medium"
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+  )}
+</div>
         {/* Footer */}
         <div className="text-center space-y-3 py-3">
           <p className="text-xs text-gray-600 font-sans">Powered by <a href="https://www.rdep.io" target="_blank" rel="noopener noreferrer" className="hover:underline"><Image src="/images/rdep-logo.png" alt="RDEP" width={40} height={20} className="inline h-4 w-auto object-contain" /></a></p>
         </div>
       </div>
 
-      {/* Transaction History Modal */}
-      {showTransactionHistory && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full max-h-96 overflow-y-auto">
-            <div className="sticky top-0 bg-[#862633] text-white p-6 flex justify-between items-center">
-              <h3 className="text-lg font-serif font-bold">Transaction History</h3>
-              <button
-                onClick={() => setShowTransactionHistory(false)}
-                className="text-2xl hover:opacity-75 transition-opacity"
-              >
-                ×
-              </button>
+     {/* Transaction History Modal */}
+{showTransactionHistory && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+
+    <div className="bg-white rounded-2xl max-w-md w-full max-h-96 overflow-y-auto border border-[#e5e5e5]">
+
+      {/* Header */}
+      <div className="sticky top-0 bg-black text-white p-6 flex justify-between items-center">
+
+        <h3 className="text-lg font-semibold">
+          Transaction History
+        </h3>
+
+        <button
+          onClick={() => setShowTransactionHistory(false)}
+          className="text-2xl hover:opacity-75 transition-opacity"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      {/* Transactions */}
+      <div className="p-6 space-y-3">
+        {transactionHistory.map((transaction) => (
+          <button
+            key={transaction.id}
+            onClick={() => {
+              setCurrentReceiptId(transaction.id)
+              setShowTransactionHistory(false)
+            }}
+            className={`w-full p-4 rounded-xl border transition-all text-left ${
+              currentReceiptId === transaction.id
+                ? "bg-[#fafafa] border-black"
+                : "bg-white border-[#e5e5e5] hover:border-black"
+            }`}
+          >
+            <p className="text-xs text-gray-500 mb-1">
+              {transaction.date}
+            </p>
+            <div className="flex justify-between items-center">
+              <p className="text-sm font-semibold text-black">
+                {transaction.branch}
+              </p>
+              <p className="text-sm font-semibold text-black">
+                ₹{transaction.amount.toFixed(2)}
+              </p>
             </div>
-            <div className="p-6 space-y-3">
-              {transactionHistory.map((transaction) => (
-                <button
-                  key={transaction.id}
-                  onClick={() => {
-                    setCurrentReceiptId(transaction.id)
-                    setShowTransactionHistory(false)
-                  }}
-                  className={`w-full p-4 rounded-lg border-2 transition-all text-left ${currentReceiptId === transaction.id
-                    ? 'bg-[#fdfaf7] border-[#862633]'
-                    : 'bg-white border-[#e0d5ce] hover:border-[#862633]'
-                    }`}
-                >
-                  <p className="text-xs text-gray-500 font-sans mb-1">{transaction.date}</p>
-                  <div className="flex justify-between items-center">
-                    <p className="text-base font-semibold text-[#862633] font-sans">{transaction.branch}</p>
-                    <p className="text-sm font-serif font-bold text-[#862633]">${transaction.amount.toFixed(2)}</p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
     </div>
   )
 }
